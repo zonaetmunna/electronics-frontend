@@ -1,6 +1,7 @@
 import React from 'react';
 import { BsCart3, BsHeart,BsSearch } from 'react-icons/bs';
 import { VscAccount } from 'react-icons/vsc';
+import { Link } from 'react-router-dom';
 
 
 const Navbar = () => {
@@ -9,7 +10,7 @@ const Navbar = () => {
       <div className='container flex items-center justify-around'>
         <div>
           <h4 className=' text-lime-800'>Electronics</h4>
-          <p className=''>For all updated products</p>
+          <p className='/'>For all updated products</p>
         </div>
         <div >
           <div className='flex justify-between align-center border border-2 border-red-500'>
@@ -20,16 +21,29 @@ const Navbar = () => {
         </div>
         <div className='flex justify-around align-center'>
           <div className='px-2'>
-            <span><BsCart3 /></span>
-            <span><p>cart</p></span>
+            <Link to='/cart'>
+              <span><BsCart3 /></span>
+              <span><p>cart</p></span>
+            </Link>
+            
           </div>
           <div className='px-2'>
-            <span><BsHeart/></span>
-            <span><p>wishlist</p></span>
+            <Link to="/wishlist">
+              <span><BsHeart/></span>
+              <span><p>wishlist</p></span>
+            </Link>
+            
+          </div>
+          <div className='px-2'>
+            <Link to="/about"><p>about</p></Link>
+            
           </div>
           <div>
-            <span><VscAccount /></span>
-            <span>account</span>
+            <Link to="/account">
+              <span><VscAccount /></span>
+              <span>account</span>
+            </Link>
+            
           </div>
         </div>
       </div>
