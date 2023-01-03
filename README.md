@@ -6,6 +6,7 @@
 - tailwind css
 - react-icons
 - react-hooks-form
+- swiper
 
 ### backend and database
 

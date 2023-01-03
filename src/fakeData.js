@@ -1,4 +1,0 @@
-const fakeData = [{
-  category: 'leptop',
-
-}]
