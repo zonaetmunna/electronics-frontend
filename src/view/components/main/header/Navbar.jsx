@@ -35,7 +35,10 @@ const Navbar = () => {
           </div>
           <div className='px-2'>
             <Link to="/about"><FcAbout /></Link>
-            
+          </div>
+          {/* dashboard link */}
+          <div className='px-2'>
+            <Link to="/dashboard">Dashboard</Link>
           </div>
           {user ? <div>
             <Link to="/account">

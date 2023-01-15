@@ -3,6 +3,7 @@ import Dashboard from "../view/layout/Dashboard";
 import Error from "../view/layout/Error";
 import Main from "../view/layout/Main";
 import AddProduct from "../view/pages/dashboard/AddProduct";
+import AllProducts from "../view/pages/dashboard/AllProducts";
 import About from "../view/pages/main/about/About";
 import Cart from "../view/pages/main/cart/Cart";
 import Checkout from "../view/pages/main/checkout/Checkout";
@@ -68,8 +69,13 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/dashboard',
+        element:<AllProducts/>
+      },
+      {
+        path: 'addProduct',
         element:<AddProduct />
       }
+
     ]
   }
   

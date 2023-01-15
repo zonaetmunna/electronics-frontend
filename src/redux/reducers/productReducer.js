@@ -1,4 +1,4 @@
-import { ADD_TO_CART, CLEAR_CART, LOAD_PRODUCT, REMOVE_TO_CART } from "../actionTypes/actionTypes";
+import { ADD_PRODUCT, ADD_TO_CART, CLEAR_CART, DELETE_PRODUCT, LOAD_PRODUCT, REMOVE_TO_CART } from "../actionTypes/actionTypes";
 
 const initialState = {
   cart: [],
@@ -16,7 +16,18 @@ const productReducer = (state = initialState, action) => {
         ...state,
         products: action.payload,
       };
-
+    // add product
+    case ADD_PRODUCT:
+      return {
+        ...state,
+        products: [...state.products, action.payload],
+      };
+    case DELETE_PRODUCT:
+      return {
+        ...state,
+        products: state.products.filter((product) => product._id !== action.payload)
+      };
+    
     // products cart
     case ADD_TO_CART:
       if (selectedProduct) {

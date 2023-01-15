@@ -1,6 +1,5 @@
 import { ADD_TO_CART } from "../actionTypes/actionTypes";
 
-
 const cartCounter = (store) => (next) => (action) => {
   const state = store.getState();
   
