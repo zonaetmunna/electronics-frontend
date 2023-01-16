@@ -7,6 +7,7 @@
 - react-icons
 - react-hooks-form
 - swiper
+- react-rating
 
 ### backend and database
 

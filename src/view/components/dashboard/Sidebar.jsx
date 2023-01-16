@@ -12,6 +12,9 @@ const Sidebar = () => {
         <li>
           <Link to='addProduct'> Add-Product </Link>
         </li>
+        <li>
+          <Link to='makeAdmin'> make-admin </Link>
+        </li>
         <li className='mt-auto'>
           <Link to='/'> Back to Home </Link>
         </li>
