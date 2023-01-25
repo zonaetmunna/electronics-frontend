@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import deleteProductData from '../../../redux/thunk/products/deleteProduct';
 import loadProductsdata from '../../../redux/thunk/products/fetachProduct';
+import toast, { Toaster } from 'react-hot-toast';
+
 
 const AllProducts = () => {
 
@@ -9,18 +11,18 @@ const AllProducts = () => {
   const products = useSelector(state => state.products.products);
   useEffect(() => {
     dispatch(loadProductsdata(products));
-  }, [products, dispatch]);
+  }, [dispatch]);
 
   return (
     <div class='flex flex-col justify-center items-center h-full w-full '>
       <div class='w-full max-w-7xl mx-auto rounded-lg  bg-white shadow-lg border border-gray-200'>
         <header class='px-5 py-4 border-b border-gray-100'>
-          <div class='font-semibold text-gray-800'>Products</div>
+          <div class='font-bold text-black'>Products List</div>
         </header>
 
         <div class='overflow-x-auto p-3'>
           <table class='table-auto w-full'>
-            <thead class='text-xs font-semibold uppercase text-gray-400 bg-gray-50'>
+            <thead class='text-xs font-semibold uppercase text-gray-500 bg-cyan-400'>
               <tr>
                 <th></th>
                 <th class='p-2'>
@@ -43,7 +45,7 @@ const AllProducts = () => {
 
             <tbody class='text-sm divide-y divide-gray-100'>
               {products.map(({ model, brand, price, status, _id }) => (
-                <tr>
+                <tr className='shadow-lg border border-gray-200'>
                   <td class='p-2'>
                     <input type='checkbox' class='w-5 h-5' value='id-1' />
                   </td>

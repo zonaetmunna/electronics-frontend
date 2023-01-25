@@ -10,6 +10,7 @@ const deleteProductData = (id) => {
     }
     );
     const data = await res.json();
+    console.log('delted success');
 
     if (data.acknowledged) {
       dispatch(deleteProduct(id));

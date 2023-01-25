@@ -15,8 +15,9 @@ const AddProduct = () => {
       status: data.status === "true" ? true : false,
       price: data.price,
       
-      spec: [],
+      spec: [data.keyFeature1, data.keyFeature2, data.keyFeature3, data.keyFeature4]
     };
+    console.log(product);
     dispatch(addProductData(product));
   };
 
@@ -50,7 +51,7 @@ const AddProduct = () => {
         </div>
         <div className='flex flex-col w-full max-w-xs'>
           <label className='mb-2' htmlFor='price'>
-            Image
+            Price
           </label>
           <input type='text' name='price' id='price' {...register("price")} />
         </div>

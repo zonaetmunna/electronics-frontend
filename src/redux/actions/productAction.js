@@ -1,4 +1,4 @@
-import { ADD_PRODUCT, ADD_TO_CART, CLEAR_CART, DELETE_PRODUCT, LOAD_PRODUCT, REMOVE_TO_CART } from "../actionTypes/actionTypes"
+import { ADD_PRODUCT, ADD_TO_CART, CLEAR_CART, DELETE_PRODUCT, LOAD_PRODUCT, PRODUCT_LOADED, REMOVE_TO_CART } from "../actionTypes/actionTypes"
 
 // product cart action
 // add to cart
@@ -8,7 +8,7 @@ export const addToCart = (data) => {
     payload: data
   }
 };
-// remoe form cart
+// remove form cart
 export const removeToCart = (id) => {
   return {
     type: REMOVE_TO_CART,
@@ -46,4 +46,11 @@ export const deleteProduct = (id) => {
     type: DELETE_PRODUCT,
     payload: id
   }
+};
+
+export const loaded = (products) => {
+  return {
+    type: PRODUCT_LOADED,
+    payload: products,
+  };
 };

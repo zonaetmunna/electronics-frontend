@@ -4,6 +4,8 @@ import loadProductsdata from '../../../redux/thunk/products/fetachProduct';
 import Slider from '../../components/common/slider/Slider';
 import Sidebar from '../../components/main/sidebar/Sidebar';
 import Products from '../../components/main/products/Products';
+import MiddleBanner from '../../components/main/home/MiddleBanner';
+import DiscountBanner from '../../components/common/DiscountBanner/DiscountBanner';
 
 
 
@@ -25,9 +27,24 @@ const Home = () => {
           <Sidebar />
         </div>
         <div className='col-span-10 rounded-lg'>
-          <Products products={products} />
+          <div>
+            <h3 className='text-center text-yellow-500 my-2'>ALL Products</h3>
+          </div>
+          <div>
+            <Products products={products} />
+          </div>
+          
         </div>
       </div>
+      {/* middle banner */}
+      <div>
+        <MiddleBanner />
+      </div>
+      <div>
+        <DiscountBanner/>
+      </div>
+
+      
     </div>
   );
 };
