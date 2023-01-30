@@ -20,7 +20,7 @@ const Footer = () => {
         <p className='text-teal-500'>Become Seller</p>
         
       </div>
-      <div className='text-center'>
+      <div className='col-span-3 text-center'>
         <h4 className='text-white font-bold text-lg'>Helpful</h4>
         <p className='text-teal-500'>Faq</p>
         <p className='text-teal-500'>Support</p>
