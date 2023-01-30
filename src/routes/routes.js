@@ -14,19 +14,7 @@ import Login from "../view/pages/main/Login";
 import Signup from "../view/pages/main/Signup";
 import SingleProduct from "../view/pages/main/SingleProduct";
 import WishList from "../view/pages/main/WishList";
-/* import AddProduct from "../view/pages/dashboard/AddProduct";
-import AllProducts from "../view/pages/dashboard/AllProducts";
-import MakeAdmin from "../view/pages/dashboard/MakeAdmin";
-import About from "../view/pages/main/About";
-import Cart from "../view/pages/main/cart/Cart";
-import Checkout from "../view/pages/main/Checkout";
-import Contact from "../view/pages/main/Contact";
-import Home from "../view/pages/main/Home";
-import Login from "../view/pages/main/Login";
-import Signup from "../view/pages/main/Signup";
-import SingleProduct from "../view/pages/main/SingleProduct";
-import WishList from "../view/pages/main/WishList";
- */
+
 
 const router = createBrowserRouter([
   // main

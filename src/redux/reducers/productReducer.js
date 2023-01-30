@@ -1,8 +1,9 @@
-import { ADD_PRODUCT, ADD_TO_CART, CLEAR_CART, DELETE_PRODUCT, LOAD_PRODUCT, PRODUCT_LOADED, REMOVE_TO_CART } from "../actionTypes/actionTypes";
+import { ADD_PRODUCT, ADD_TO_CART, CLEAR_CART, DELETE_PRODUCT, LOAD_PRODUCT, LOAD_SINGLE_PRODUCT, PRODUCT_LOADED, REMOVE_TO_CART } from "../actionTypes/actionTypes";
 
 const initialState = {
   cart: [],
-  products: []
+  products: [],
+  singleProduct:{},
 };
 
 const productReducer = (state = initialState, action) => {
@@ -27,7 +28,11 @@ const productReducer = (state = initialState, action) => {
         ...state,
         products: state.products.filter((product) => product._id !== action.payload),
       };
-    
+    case LOAD_SINGLE_PRODUCT:
+      return {
+        ...state,
+        singleProduct: {singleProduct:action.payload }
+      };
     // products cart
     case ADD_TO_CART:
       if (selectedProduct) {

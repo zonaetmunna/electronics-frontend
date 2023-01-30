@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { addToCart } from '../../../../redux/actions/productAction';
+import { addToCart, removeToCart } from '../../../../redux/actions/productAction';
 import { BsCart3 } from 'react-icons/bs';
 import { FaDollarSign } from 'react-icons/fa';
 import Rating from 'react-rating';
@@ -11,6 +11,16 @@ const ProductCard = ({ product }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { pathname } = useLocation();
+
+  // handle add product cart
+  const handleAddProductCart = (product) => {
+    dispatch(addToCart(product));
+  }
+
+  // remove product cart handle
+  const handleRemoveProductCart = (_id) => {
+    dispatch(removeToCart(_id));
+  }
  
 
   return (
@@ -41,8 +51,12 @@ const ProductCard = ({ product }) => {
           </div>
           {/* add to cart button */}
           <div className="flex items-center justify-between px-1 py-1">
-            <button onClick={() => dispatch(addToCart(product))} className="text-black bg-yellow-500 hover:bg-yellow-600 border-orange-600 font-medium rounded-lg text-bold px-3 py-2 flex justify-around items-center"> <span><BsCart3 size={20} /></span> <span> Add to cart</span></button>
+            <button onClick={handleAddProductCart(product)} className="text-black bg-yellow-500 hover:bg-yellow-600 border-orange-600 font-medium rounded-lg text-bold px-3 py-2 flex justify-around items-center"> <span><BsCart3 size={20} /></span> Add to cart <span></span></button>
           </div>
+          {/* remove to cart button */}
+          {pathname.includes('cart')&&<div className="flex items-center justify-between px-1 py-1">
+            <button onClick={handleRemoveProductCart(product._id)} className="text-black bg-yellow-500 hover:bg-yellow-600 border-orange-600 font-medium rounded-lg text-bold px-3 py-2 flex justify-around items-center"> <span><BsCart3 size={20} /></span>Remove from Cart <span></span></button>
+          </div>}
         </div>
       </div>}
       

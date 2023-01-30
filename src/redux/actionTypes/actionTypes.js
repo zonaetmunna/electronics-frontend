@@ -8,7 +8,8 @@ export const PRODUCT_LOADED = "PRODUCT_LOADED";
 // PRODUCT ACTION TYPES
 export const LOAD_PRODUCT = 'LOAD_PRODUCT';
 export const ADD_PRODUCT = 'ADD_PRODUCT';
-export const DELETE_PRODUCT= 'DELETE_PRODUCT'
+export const DELETE_PRODUCT = 'DELETE_PRODUCT'
+export const LOAD_SINGLE_PRODUCT = 'LOAD_SINGLE_PRODUCT';
 
 
 // PRODUCT filter action types

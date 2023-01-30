@@ -19,6 +19,7 @@ const AddProduct = () => {
     };
     console.log(product);
     dispatch(addProductData(product));
+    console.log('data added');
   };
 
   return (
@@ -27,35 +28,38 @@ const AddProduct = () => {
         className='shadow-lg p-10 rounded-md flex flex-wrap gap-3 max-w-3xl justify-between bg-white'
         onSubmit={handleSubmit(submitData)}
       >
+        {/* model */}
         <div className='flex flex-col w-full max-w-xs'>
           <label className='mb-2' htmlFor='model'>
             Model
           </label>
-          <input type='text' id='model' {...register("model")} />
+          <input type='text' id='model' {...register("model")} required/>
         </div>
+        {/* image */}
         <div className='flex flex-col w-full max-w-xs'>
           <label className='mb-2' htmlFor='image'>
             Image
           </label>
-          <input type='text' name='image' id='image' {...register("image")} />
+          <input type='text' name='image' id='image' {...register("image")} required/>
         </div>
-
+        {/* brabd */}
         <div className='flex flex-col w-full max-w-xs'>
           <label className='mb-3' htmlFor='brand'>
             Brand
           </label>
-          <select name='brand' id='brand' {...register("brand")}>
+          <select name='brand' id='brand' {...register("brand")} required>
             <option value='amd'>AMD</option>
             <option value='intel'>Intel</option>
           </select>
         </div>
+        {/* price */}
         <div className='flex flex-col w-full max-w-xs'>
           <label className='mb-2' htmlFor='price'>
             Price
           </label>
-          <input type='text' name='price' id='price' {...register("price")} />
+          <input type='number' name='price' id='price' {...register("price")} required/>
         </div>
-
+        {/* status */}
         <div className='flex flex-col w-full max-w-xs'>
           <h1 className='mb-3'>Availability</h1>
           <div className='flex gap-3'>
@@ -65,6 +69,7 @@ const AddProduct = () => {
                 id='available'
                 value={true}
                 {...register("status")}
+                required
               />
               <label className='ml-2 text-lg' htmlFor='available'>
                 Available
@@ -77,6 +82,7 @@ const AddProduct = () => {
                 name='status'
                 value={false}
                 {...register("status")}
+                required
               />
               <label className='ml-2 text-lg' htmlFor='stockOut'>
                 Stock out
@@ -85,6 +91,7 @@ const AddProduct = () => {
           </div>
         </div>
         <div className='flex flex-col w-full max-w-xs'></div>
+         {/* fetaure 1 */}
         <div className='flex flex-col w-full max-w-xs'>
           <label className='mb-2' htmlFor='keyFeature1'>
             Key Feature 1
@@ -96,6 +103,7 @@ const AddProduct = () => {
             {...register("keyFeature1")}
           />
         </div>
+         {/* fetaure 2 */}
         <div className='flex flex-col w-full max-w-xs'>
           <label className='mb-2' htmlFor='keyFeature2'>
             Key Feature 2
@@ -107,6 +115,7 @@ const AddProduct = () => {
             {...register("keyFeature2")}
           />
         </div>
+         {/* fetaure 3 */}
         <div className='flex flex-col w-full max-w-xs'>
           <label className='mb-2' htmlFor='keyFeature3'>
             Key Feature 3
@@ -118,6 +127,7 @@ const AddProduct = () => {
             {...register("keyFeature3")}
           />
         </div>
+        {/* fetaure 4 */}
         <div className='flex flex-col w-full max-w-xs'>
           <label className='mb-2' htmlFor='keyFeature4'>
             Key Feature 4
@@ -129,7 +139,7 @@ const AddProduct = () => {
             {...register("keyFeature4")}
           />
         </div>
-
+        {/* submit button */}
         <div className='flex justify-between items-center w-full'>
           <button
             className=' px-4 py-3 bg-indigo-500 rounded-md font-semibold text-white text-lg disabled:bg-gray-500'

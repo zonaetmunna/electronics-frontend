@@ -1,4 +1,4 @@
-import { ADD_PRODUCT, ADD_TO_CART, CLEAR_CART, DELETE_PRODUCT, LOAD_PRODUCT, PRODUCT_LOADED, REMOVE_TO_CART } from "../actionTypes/actionTypes"
+import { ADD_PRODUCT, ADD_TO_CART, CLEAR_CART, DELETE_PRODUCT, LOAD_PRODUCT, LOAD_SINGLE_PRODUCT, PRODUCT_LOADED, REMOVE_TO_CART } from "../actionTypes/actionTypes"
 
 // product cart action
 // add to cart
@@ -53,4 +53,11 @@ export const loaded = (products) => {
     type: PRODUCT_LOADED,
     payload: products,
   };
+};
+
+export const loadSingleProduct = (data) => {
+  return {
+    type: LOAD_SINGLE_PRODUCT,
+    payload: data,
+  }
 };
