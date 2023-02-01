@@ -1,11 +1,18 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import ProductCard from '../../components/main/ProductCard/ProductCard';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { AiOutlineDelete } from 'react-icons/ai';
+import { removeToCart } from '../../../redux/actions/productAction';
 
 const Cart = () => {
+
   const cart = useSelector(state => state.products.cart);
   console.log(cart);
+  const dispatch = useDispatch();
+  // remove product from cart
+  const handleRemoveProductCart = (_id) => {
+    dispatch(removeToCart(_id));
+  };
+
   return (
     <div>
       <div className='text-center px-5 py-5'>
@@ -16,7 +23,7 @@ const Cart = () => {
         {/* {cart.sort((a, b) => a.cartPosition - b.cartPosition).map(product => <ProductCard key={product._id} product={product}/>)} */}
         <div className="flex flex-col">
           <div className="">
-            <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+            <div className="py-2 inline-block sm:px-6 lg:px-8">
               <div className="shadow border-b border-gray-200 sm:rounded-lg">
                 <table className="divide-y divide-gray-200">
                   <thead className="bg-gray-50">
@@ -46,7 +53,7 @@ const Cart = () => {
                       >
                         Total
                       </th>
-                      <th scope="col" className="px-6 py-3">
+                      <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         <span className="">remove</span>
                       </th>
                     </tr>
@@ -77,8 +84,9 @@ const Cart = () => {
                           <div
                             className="px-2 inline-flex text-xs leading-5
                       font-semibold rounded-full bg-green-100 text-green-800"
+                            onClick={handleRemoveProductCart(product._id)}
                           >
-                            remove
+                            <AiOutlineDelete size={20}/>
                           </div>
                         </td>
                         
