@@ -25,3 +25,9 @@
 ### what we learning in this project
 
 -
+
+## project simple description
+
+- Implemented a simple e-commerce platform using technologies such as HTML, CSS, JavaScript, and react, redux.
+- Implemented features such as secure payment integration, dynamic product catalog, and responsive design.
+- Resulted in increased online sales for the client. Demonstrated ability to implement an effective solution using various web technologies.

@@ -3,7 +3,7 @@ import { loadProduct, loadSingleProduct } from "../../actions/productAction";
 // load product
 const loadProductsdata = () => {
   return async (dispatch, getState) => {
-    const res = await fetch('http://localhost:5000/api/products/');
+    const res = await fetch('https://electronics-backend-zonaetmunna.vercel.app/api/products/');
     const data = await res.json();
     console.log(data)
 

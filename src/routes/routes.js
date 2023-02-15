@@ -16,7 +16,7 @@ import SingleProduct from "../view/pages/main/SingleProduct";
 import WishList from "../view/pages/main/WishList";
 
 
-const router = createBrowserRouter([
+export const router = createBrowserRouter([
   // main
   {
     path: "/",
@@ -89,5 +89,3 @@ const router = createBrowserRouter([
   }
   
 ]);
-
-export default router;
